@@ -38,6 +38,7 @@ CREATE TABLE posts (
   dishId INTEGER NULL,
   recipe VARCHAR NULL,
   restaurantId INTEGER NULL,
+  createdAt TIMESTAMP DEFAULT now(),
   PRIMARY KEY (id)
 );
 
@@ -53,6 +54,7 @@ CREATE TABLE comments (
   content TEXT NULL,
   postId INTEGER NOT NULL,
   userId INTEGER NOT NULL,
+  createdAt TIMESTAMP DEFAULT now(),
   PRIMARY KEY (id)
 );
 
@@ -65,7 +67,7 @@ DROP TABLE IF EXISTS dishes;
 
 CREATE TABLE dishes (
   id SERIAL,
-  name INTEGER NOT NULL,
+  name TEXT NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -126,6 +128,7 @@ CREATE TABLE notifications (
   postId INTEGER NOT NULL,
   seen BOOLEAN NOT NULL,
   userId INTEGER NOT NULL,
+  createdAt TIMESTAMP DEFAULT now(),
   PRIMARY KEY (id)
 );
 
@@ -175,6 +178,11 @@ ALTER TABLE followers ADD FOREIGN KEY (followerId) REFERENCES users (id);
 ALTER TABLE followers ADD FOREIGN KEY (followeeId) REFERENCES users (id);
 ALTER TABLE likes ADD FOREIGN KEY (postId) REFERENCES posts (id);
 ALTER TABLE likes ADD FOREIGN KEY (userId) REFERENCES users (id);
+
+ALTER TABLE restaurants ADD CONSTRAINT restaurant_unique_name UNIQUE (name);
+ALTER TABLE dishes ADD CONSTRAINT dish_unique_name UNIQUE (name);
+ALTER TABLE menus ADD CONSTRAINT menu_unique_name UNIQUE (dish_id, restaurantcode);
+
 
 -- ---
 -- Table Properties

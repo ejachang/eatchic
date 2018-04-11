@@ -1,0 +1,26 @@
+
+
+-- table
+
+INSERT into users (username, password) VALUES ('Ang', 'Ang');
+INSERT into users (username, password) VALUES ('Lory', 'Lory');
+INSERT into users (username, password) VALUES ('David', 'David');
+
+INSERT into dishes (name) VALUES ('Sandwiches');
+INSERT into dishes (name) VALUES ('Mac n Cheese');
+INSERT into dishes (name) VALUES ('Cookie cereal');
+
+insert into restaurants (name, description, category, location) VALUES ('Mama Mia', 'yum', 'lunch', 'San Francisco');
+insert into restaurants (name, description, category, location) VALUES ('Melt', 'yum', 'lunch', 'San Francisco');
+insert into restaurants (name, description, category, location) VALUES ('Happy Yum', 'yummy yummers!', 'breakfast', 'San Francisco');
+
+INSERT into posts (content, image, likesDish, userID, dishId, restaurantid) VALUES
+('Nom nom nom', 'https://www.aiche.org/sites/default/files/images/conference/event/1200-dietitian-lunch-wide-sandwich.jpg', 1, 1, 1, 1);
+INSERT into posts (content, image, likesDish, userID, dishId, restaurantid) VALUES
+('Cheesy McCheese', 'https://static1.squarespace.com/static/515ecaf0e4b0875140cb8775/59a6ebc715d5dbf2569d69fc/59a6ec1ff9a61e863f312fd1/1504111648572/cheesy+spatzle-2.jpg?format=2500w', 0, 2, 2, 2);
+INSERT into posts (content, image, likesDish, userID, dishId, restaurantid) VALUES
+('Cookies in cereal', 'https://static1.squarespace.com/static/515ecaf0e4b0875140cb8775/5a3abf3e0d9297e5adc2d82e/5a3ac15c24a694af280afcde/1513800031398/new+years+cookie+cereal-15.jpg?format=2500w', null, 3, 3, 3);
+
+INSERT into likes (postId, userId) VALUES (1, 1);
+INSERT into likes (postId, userId) VALUES (2, 2);
+INSERT into likes (postId, userId) VALUES (3, 3);
