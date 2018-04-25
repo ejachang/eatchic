@@ -7,6 +7,8 @@ import $ from 'jquery';
 // import io from 'socket.io-client';
 import Suggestions from './suggestions';
 
+const cloudinary = require('cloudinary');
+
 class Submit extends React.Component {
   constructor(props) {
     super(props);
@@ -132,6 +134,11 @@ class Submit extends React.Component {
       error: (err) => {
         console.log (err);
       },
+    });
+    cloudinary.config({
+      cloud_name: process.env.CLOUDINARY_NAME,
+      api_key: process.env.CLOUDINARY_KEY,
+      api_secret: process.env.CLOUDINARY_SECRET,
     });
   }
   handleClick(event) {

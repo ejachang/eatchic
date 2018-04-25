@@ -1,9 +1,9 @@
 const { Client } = require('pg');
 
 // const client = new Client({
-//   user: 'eatchic',
-//   password: 'eatchic',
-//   database: 'eat_chic',
+//   user: '',
+//   password: '',
+//   database: '',
 // });
 
 // pool.query('select NOW()', (err, res) => {

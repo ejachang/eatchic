@@ -1,6 +1,6 @@
 # Project Name
 
-Food that is chic and on fleek.
+Formerly known as eatchic
 
 ## Team
 

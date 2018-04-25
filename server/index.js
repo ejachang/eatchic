@@ -10,7 +10,7 @@ const { localLogIn, googleLogIn } = require('./middleware');
 const models = require('./models');
 // const CryptoJS = require('crypto-js');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3333;
 
 const app = express();
 
