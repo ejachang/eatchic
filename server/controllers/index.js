@@ -4,6 +4,7 @@ const { sortByRating, countLikes } = require('../utils');
 module.exports = {
   reviews: (req, res) => {
     const data = req.query;
+    // eslint-disable-next-line
     console.log('date:', data);
     models.reviews(data)
       .then(results => res.json(results.rows))
@@ -15,7 +16,7 @@ module.exports = {
       models.likes.get(data).then((queryResults) => {
         let userLiked = false;
         queryResults.rows.forEach((row) => {
-          if (row.userid == data.user) {
+          if (row.userid === data.user) {
             userLiked = true;
           }
         });
