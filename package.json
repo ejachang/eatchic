@@ -10,9 +10,10 @@
   },
   "scripts": {
     "start-dev": "nodemon server/index.js",
+    "dev-react": "webpack client/src/index.jsx -o client/dist/bundle.js",
     "dev:react": "webpack -d --watch",
     "stylus": "stylus -w client/src/index.styl -o client/dist/stylus.css",
-    "dev": "start nodemon server/index.js && start webpack -d --watch && start stylus -w client/src/index.styl -o client/dist/stylus.css"
+    "dev": "nodemon server/index.js && start webpack -d --watch && start stylus -w client/src/index.styl -o client/dist/stylus.css"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
@@ -56,7 +57,8 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
-    "webpack": "^4.10.2"
+    "webpack": "^4.10.2",
+    "webpack-command": "^0.2.0"
   },
   "babel": {
     "presets": [

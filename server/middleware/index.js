@@ -21,9 +21,9 @@ module.exports = {
       });
   }),
   googleLogIn: () => new GoogleStrategy({
-    clientID: process.env.EATCHIC_CLIENT_ID || keys.clientID,
-    clientSecret: process.env.EATCHIC_CLIENT_SECRET || keys.clientSecret,
-    callbackURL: process.env.EATCHIC_CALLBACK_URL || keys.callbackURL,
+    clientID: process.env.EATCHIC_CLIENT_ID || keys.google.clientID,
+    clientSecret: process.env.EATCHIC_CLIENT_SECRET || keys.google.clientSecret,
+    callbackURL: process.env.EATCHIC_CALLBACK_URL || keys.google.callbackURL,
   }, (accessToken, refreshToken, profile, done) => {
     const { displayName } = profile;
     models.users.findByUsername(displayName)
