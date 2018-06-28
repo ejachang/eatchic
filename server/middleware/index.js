@@ -1,6 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const LocalStrategy = require('passport-local').Strategy;
 const models = require('../models');
+const keys = require('../config');
 // const CryptoJS = require('crypto-js');
 
 module.exports = {
@@ -20,9 +21,9 @@ module.exports = {
       });
   }),
   googleLogIn: () => new GoogleStrategy({
-    clientID: process.env.EATCHIC_CLIENT_ID || 'YOUR CLIENT ID HERE',
-    clientSecret: process.env.EATCHIC_CLIENT_SECRET || 'YOUR CLIENT SECRET HERE',
-    callbackURL: process.env.EATCHIC_CALLBACK_URL || 'YOUR CALLBACK URL HERE',
+    clientID: process.env.EATCHIC_CLIENT_ID || keys.google.clientID,
+    clientSecret: process.env.EATCHIC_CLIENT_SECRET || keys.google.clientSecret,
+    callbackURL: process.env.EATCHIC_CALLBACK_URL || keys.google.callbackURL,
   }, (accessToken, refreshToken, profile, done) => {
     const { displayName } = profile;
     models.users.findByUsername(displayName)

@@ -1,9 +1,7 @@
 # Project Name
-
-Formerly known as eatchic
+eatchic
 
 ## Team
-
   - Angela
   - David
   - Lory
@@ -23,7 +21,6 @@ Formerly known as eatchic
 > Some usage instructions
 
 ## Requirements
-
 - Node 6.4.x
 - Postgresql 9.1.x
 - etc

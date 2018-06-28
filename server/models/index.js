@@ -100,6 +100,7 @@ module.exports = {
           }
           return db.client.query(createDish);
         })
+        // eslint-disable-next-line
         .catch(err => console.log (err));
     },
     restaurant: (restaurant) => {
@@ -118,6 +119,7 @@ module.exports = {
           }
           return db.client.query(createRestaurant);
         })
+        // eslint-disable-next-line
         .catch(err => console.log (err));
     },
     menu: (data) => {
