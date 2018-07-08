@@ -9,6 +9,7 @@
     "node": "8.10.0"
   },
   "scripts": {
+    "start": "node server/index.js",
     "start-dev": "nodemon server/index.js",
     "dev-react": "webpack client/src/index.jsx -o client/dist/bundle.js",
     "dev:react": "webpack -d --watch",
