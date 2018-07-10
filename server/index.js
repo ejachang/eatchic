@@ -50,7 +50,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.use(express.static(path.join(__dirname, '/../client/dist')));
+app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 app.use('/login', express.static(path.join(__dirname, '/../client/dist/login.html')));
 app.use('/signup', express.static(path.join(__dirname, '/../client/dist')));
 
