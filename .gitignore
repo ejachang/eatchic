@@ -31,13 +31,12 @@ package-lock.json
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules/
 bower_components/
+client/dist/bundle.js
+client/dist/stylus.css
 
-#config
 server/config
-database/config
 
 # other
 .env
 /ref
 package-lock.json
-client/dist/bundle.js
