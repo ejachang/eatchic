@@ -1,0 +1,34 @@
+.ele {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 80%;
+  border-bottom: solid gray;
+}
+
+.image {
+  width: 100%;
+}
+.post-ele {
+  align-content: center;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+}
+
+.content-ele {
+  margin-left: 0.3cm;
+}
+
+#dislikes-selected {
+  color: red;
+}
+
+#likes-selected {
+  color: red;
+}
+
+i:hover {
+  color: red;
+}
