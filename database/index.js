@@ -1,10 +1,9 @@
 const { Client } = require('pg');
-// const { user, password, database } = require('./config/index.js');
 
 // const client = new Client({
-//   user: user,
-//   password: password,
-//   database: database,
+//   user: 'eatchic',
+//   password: 'eatchic',
+//   database: 'eat_chic',
 // });
 
 // pool.query('select NOW()', (err, res) => {
