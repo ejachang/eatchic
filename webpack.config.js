@@ -21,9 +21,9 @@ module.exports = {
       },
     ],
   },
-  node: {
-    fs: 'empty',
-  },
+  // node: {
+  //   fs: 'empty',
+  // },
   resolve: {
     extensions: ['.jsx', '.js', '.css'],
   },
