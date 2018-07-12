@@ -9,7 +9,7 @@
     "node": ">=6.4.0"
   },
   "scripts": {
-    "start": "node server/index.js && stylus -w client/src/index.styl -o client/dist/stylus.css && webpack -d --watch",
+    "start": "node server/index.js",
     "start-dev": "nodemon server/index.js",
     "dev:react": "webpack -d --watch",
     "stylus": "stylus -w client/src/index.styl -o client/dist/stylus.css",
