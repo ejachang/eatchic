@@ -32,7 +32,7 @@ package-lock.json
 node_modules/
 bower_components/
 client/dist/bundle.js
-# client/dist/stylus.css
+client/dist/stylus.css
 
 server/config
 

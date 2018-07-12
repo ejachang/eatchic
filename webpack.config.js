@@ -6,7 +6,7 @@ const DIST_DIR = path.join(__dirname, '/client/dist/');
 module.exports = {
   entry: `${SRC_DIR}index.jsx`,
   output: {
-    filename: '/bundle.js',
+    filename: 'bundle.js',
     path: DIST_DIR,
   },
   module: {
@@ -21,9 +21,6 @@ module.exports = {
       },
     ],
   },
-  // node: {
-  //   fs: 'empty',
-  // },
   resolve: {
     extensions: ['.jsx', '.js', '.css'],
   },
