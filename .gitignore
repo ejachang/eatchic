@@ -22,8 +22,8 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
-bundle.js
-stylus.css
+# bundle.js
+# stylus.css
 package-lock.json
 
 # Dependency directorys
@@ -31,8 +31,8 @@ package-lock.json
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules/
 bower_components/
-client/dist/bundle.js
-client/dist/stylus.css
+# client/dist/bundle.js
+# client/dist/stylus.css
 
 server/config
 

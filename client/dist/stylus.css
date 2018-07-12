@@ -1,0 +1,320 @@
+* {
+  font-family: 'Open Sans';
+}
+body {
+  margin: 0;
+}
+#app {
+  margin: 0 auto;
+}
+#header {
+  background: #ec407a;
+  height: 60px;
+  width: 100%;
+  color: #fff;
+  text-align: right;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-right: 40px;
+  line-height: 60px;
+}
+#header a {
+  color: #fff;
+  padding-left: 40px;
+}
+#header h1 {
+  position: absolute;
+  left: 40px;
+  line-height: 60px;
+  text-align: left;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 4px;
+}
+#login,
+#signup,
+#header button {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d9534f;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+#header button.logout {
+  margin-left: 30px;
+}
+#username,
+#password {
+  margin-left: 8px;
+  margin-bottom: 10px;
+  height: 40px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0.25em;
+}
+.searchBar {
+  block: display;
+  float: left;
+  height: 80%;
+}
+#searchValue {
+  margin-left: 8px;
+  height: 40%;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0.25em;
+}
+#searchTerm {
+  font-weight: 400;
+  margin-left: 8px;
+  height: 40%;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0.25em;
+}
+.logout {
+  margin-left: 20px;
+}
+#title {
+  position: absolute;
+}
+.ele {
+  height: 100% !important;
+  width: 100% !important;
+}
+#submit {
+  width: 600px;
+  margin: 40px auto;
+}
+#submit #photoPicker {
+  display: none;
+}
+#submit .btn-secondary {
+  border: none;
+  padding: 0;
+  color: #ad1457;
+}
+#submit .dropdown-menu {
+  min-width: auto;
+}
+#submit .recipe-col {
+  padding: 0;
+}
+#submit .recipe-col .recipe-btn {
+  text-align: right;
+}
+#submit .recipe-btn {
+  text-align: right;
+  background: #fff;
+  color: #ad1457;
+  width: 100%;
+  box-shadow: none;
+  padding: 0;
+  border: none;
+  outline: none !important;
+}
+#submit .suggestions {
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0 0 0.25rem 0.25rem;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  padding-left: 0;
+  margin-top: -0.75em;
+}
+#submit .suggestions li {
+  padding: 0.5rem 0.75rem;
+  list-style-type: none;
+}
+#submit .suggestions li:hover {
+  background-color: #f2f2f2;
+}
+#submit .suggestions li button {
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  drop-shadow: none;
+}
+#submit #dropzone {
+  align-items: center;
+  justify-content: center;
+  height: 232px;
+  display: flex;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0.25em;
+}
+#submit #dropzone:hover .material-icons {
+  color: #5cb3fd;
+  transition-property: color;
+  transition-duration: 0.25s;
+}
+#submit #dropzone img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#submit button:hover .material-icons {
+  color: #f00;
+}
+#submit .likes .material-icons,
+#submit .dislikes .material-icons {
+  color: #f00;
+}
+#submit .true .material-icons {
+  color: #f00;
+}
+#submit .like-btn {
+  padding: 7px 16px 6px 0;
+  background: #fff;
+  font-size: 20px;
+  border: 0 solid #fff;
+}
+#submit .btn:focus {
+  box-shadow: none;
+}
+#submit .col-3 {
+  color: #ad1457;
+  line-height: 36px;
+  text-align: right;
+}
+#submit .glyphicon {
+  font-family: 'Glyphicons';
+}
+#submit input {
+  display: block;
+  margin-bottom: 12px;
+}
+#submit textarea {
+  margin-bottom: 13px;
+}
+.ele {
+  border: none;
+}
+.ele b {
+  color: #ec407a;
+  font-weight: 600;
+}
+.ele .content-ele {
+  padding-left: 60px;
+  border-left: 8px solid #eee;
+  margin: 1em 0 1.25em;
+  font-style: italic;
+}
+.ele .content-ele::before {
+  content: '“';
+  color: #aaa;
+  letter-spacing: 2px;
+  padding-right: 1px;
+}
+.ele .content-ele::after {
+  content: "”";
+  color: #aaa;
+  letter-spacing: 2px;
+  padding-left: 1px;
+}
+div.post-ele {
+  margin-bottom: 75px;
+  padding: 0;
+}
+.comments {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.comments .red {
+  color: #f00;
+}
+.comments .comment,
+.comments .review {
+  margin-bottom: 0.5em;
+  list-style-type: none;
+}
+.comments .comment span,
+.comments .review span {
+  color: #ec407a;
+  padding-right: 20px;
+}
+.comments .username {
+  font-weight: 600;
+}
+.comments .material-icons {
+  width: 30px;
+  min-width: 40px;
+  max-width: 100%;
+}
+.comments .col-2 {
+  padding: 0;
+  text-align: right;
+}
+.comments .col-2:first-child,
+.comments .col-2:nth-child(2) {
+  text-align: left;
+}
+.comments .btn {
+  padding: 0;
+  max-width: 100%;
+}
+.comments .counter {
+  position: relative;
+  top: -6px;
+}
+.comments .btn-outline-secondary:hover {
+  border-color: #fff;
+  background-color: #fff;
+}
+.comments b {
+  color: #ec407a;
+}
+.comments .likes-button .true {
+  color: #f00;
+}
+.comments .likesComments {
+  border-radius: 0;
+}
+.comments .btn-outline-secondary {
+  border-color: #fff;
+}
+.comments .voteButtons .btn {
+  border-width: 1px 0;
+}
+.comments .input-group-prepend .btn {
+  border-radius: 0;
+}
+.comments .form-control {
+  border-color: #fff;
+}
+.comments .btn-outline-secondary.focus,
+.comments .btn-outline-secondary:focus {
+  box-shadow: none;
+}
+.comments .btn-outline-secondary:hover {
+  color: #f00;
+}
+.comments .image > p {
+  display: none !important;
+}
+.comments .votes {
+  display: none;
+}
+.comments .col {
+  padding: 0;
+}
+.comments .row {
+  margin: 24px 0 !important;
+}
+.comments textarea.form-control {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+  margin-top: 2.5em;
+}
+.comments ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
