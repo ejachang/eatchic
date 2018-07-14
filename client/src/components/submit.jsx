@@ -92,6 +92,12 @@ class Submit extends React.Component {
   }
 
   handleSubmit() {
+    cloudinary.config({
+      cloud_name: process.env.CLOUDINARY_NAME,
+      api_key: process.env.CLOUDINARY_KEY,
+      api_secret: process.env.CLOUDINARY_SECRET,
+    });
+
     const postData = new FormData();
     if (this.state.likesdish === true) {
       postData.append('likesdish', 1);
@@ -135,11 +141,8 @@ class Submit extends React.Component {
         console.log (err);
       },
     });
-    cloudinary.config({
-      cloud_name: process.env.CLOUDINARY_NAME,
-      api_key: process.env.CLOUDINARY_KEY,
-      api_secret: process.env.CLOUDINARY_SECRET,
-    });
+
+
   }
   handleClick(event) {
     if (event.currentTarget.name === 'like' && (this.state.likesdish === null || this.state.likesdish === false)) {
