@@ -93,9 +93,9 @@ class Submit extends React.Component {
 
   handleSubmit() {
     cloudinary.config({
-      cloud_name: process.env.CLOUDINARY_NAME,
-      api_key: process.env.CLOUDINARY_KEY,
-      api_secret: process.env.CLOUDINARY_SECRET,
+      cloud_name: process.env.CLOUDINARY_NAME || 'name',
+      api_key: process.env.CLOUDINARY_KEY || 'key',
+      api_secret: process.env.CLOUDINARY_SECRET || 'secret',
     });
 
     const postData = new FormData();
@@ -119,7 +119,16 @@ class Submit extends React.Component {
     }
 
     if (this.state.image) {
-      postData.append('image', this.state.image);
+      console.log('test ', this.state.image);
+      // debugger
+      // postData.append('image', this.state.image);
+      cloudinary.v2.uploader.upload(
+        this.state.image.name,
+        { resource_type: 'image' },
+        (err, result) => {
+          console.log('err', err, 'result', result);
+        },
+      );
     }
 
     $.post({

@@ -24,3 +24,5 @@ INSERT into posts (content, image, likesDish, userID, dishId, restaurantid) VALU
 INSERT into likes (postId, userId) VALUES (1, 1);
 INSERT into likes (postId, userId) VALUES (2, 2);
 INSERT into likes (postId, userId) VALUES (3, 3);
+
+## ALTER SEQUENCE users_id_seq RESTART WITH 1;

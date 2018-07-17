@@ -5,7 +5,7 @@ module.exports = {
   reviews: (req, res) => {
     const data = req.query;
     // eslint-disable-next-line
-    console.log('date:', data);
+    // console.log('date:', data);
     models.reviews(data)
       .then(results => res.json(results.rows))
       .catch(err => res.status(404).send(err));

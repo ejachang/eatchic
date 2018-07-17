@@ -130,7 +130,8 @@ class App extends React.Component {
           user={this.state.user}
           id={this.state.id}
           handlePostSubmit={this.handlePostSubmit}
-        />}
+        />
+        }
         <Posts
           user={this.state.user}
           changeView={this.changeView}
