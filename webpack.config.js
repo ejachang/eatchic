@@ -24,4 +24,7 @@ module.exports = {
   resolve: {
     extensions: ['.jsx', '.js', '.css'],
   },
+  node: {
+    fs: 'empty',
+  },
 };
