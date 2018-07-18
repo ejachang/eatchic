@@ -1,6 +1,14 @@
 const models = require('../models');
 const { sortByRating, countLikes } = require('../utils');
 
+const cloudinary = require('cloudinary');
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME || 'name',
+  api_key: process.env.CLOUDINARY_KEY || 'key',
+  api_secret: process.env.CLOUDINARY_SECRET || 'secret',
+});
+
 module.exports = {
   reviews: (req, res) => {
     const data = req.query;
@@ -182,10 +190,14 @@ module.exports = {
     submit: (req, res) => {
       const data = req.body;
       const { dish, restaurant, likesdish } = req.body;
+      console.log('hit1', req.body, 'res', res.body);
       if (likesdish === 'null') {
         data.likesdish = null;
       }
       if (req.file) {
+        console.log('hit');
+        cloudinary.v2.uploader.upload(req.file.filename, 
+          function(error, result) {console.log(result, error); });  
         data.image = req.file.filename;
       } else {
         data.image = null;
