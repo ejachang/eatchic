@@ -105,7 +105,7 @@ submit.jsx?4656:106 event undefined
   
   handleSubmit() {
     const file = this.state.image;
-
+    let uploadURL;
     const CLOUDINARY_URL = process.env.CLOUDINARY_URL || 'https://api.cloudinary.com/v1_1/deoppc4cw/image/upload';
     const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_UPLOAD_PRESET || 'onegouap';
     const upload = request.post(CLOUDINARY_URL)
@@ -113,56 +113,61 @@ submit.jsx?4656:106 event undefined
                           .field('file', file);
 
     upload.end((err, response) => {
-      console.log(CLOUDINARY_URL);
-      console.log(response);
-      if (err) {
-        console.error(err);
+      if (response.body.secure_url !== '') {
+        console.log('hi', response);
+        uploadURL = response.body.secure_url;
+        console.log('within func', uploadURL);
+
+        const postData = new FormData();
+        if (this.state.likesdish === true) {
+          postData.append('likesdish', 1);
+        } else if (this.state.likesdish === false) {
+          postData.append('likesdish', 0);
+        } else {
+          postData.append('likesdish', this.state.likesdish);
+        }
+        postData.append('content', this.state.content);
+        postData.append('dish', this.state.dish);
+        postData.append('userid', this.props.id);
+      
+        if (this.state.isRecipe) {
+          postData.append('recipe', this.state.restaurant);
+          postData.append('restaurant', '');
+        } else {
+          postData.append('restaurant', this.state.restaurant);
+          postData.append('recipe', '');
+        }
+      
+        if (this.state.image) {
+          postData.append('image', this.state.image);
+          console.log('within OTHER func', uploadURL);
+          // postData.append('url', )
+        }
+      
+        $.post({
+          url: '/submit',
+          data: postData,
+          processData: false,
+          contentType: false,
+          success: () => {
+            this.props.handlePostSubmit();
+            this.setState({
+              content: '',
+              restaurant: '',
+              dish: '',
+              photoURL: undefined,
+              likesdish: null,
+            });
+          },
+          error: (err) => {
+            console.log ('error hit', err);
+          },
+        });
+        if (err) {
+          console.error(err);
+        }
       }
     });
-    const postData = new FormData();
-    if (this.state.likesdish === true) {
-      postData.append('likesdish', 1);
-    } else if (this.state.likesdish === false) {
-      postData.append('likesdish', 0);
-    } else {
-      postData.append('likesdish', this.state.likesdish);
-    }
-    postData.append('content', this.state.content);
-    postData.append('dish', this.state.dish);
-    postData.append('userid', this.props.id);
-
-    if (this.state.isRecipe) {
-      postData.append('recipe', this.state.restaurant);
-      postData.append('restaurant', '');
-    } else {
-      postData.append('restaurant', this.state.restaurant);
-      postData.append('recipe', '');
-    }
-
-    if (this.state.image) {
-      postData.append('image', this.state.image);
-    }
-
-    $.post({
-      url: '/submit',
-      data: postData,
-      processData: false,
-      contentType: false,
-      success: () => {
-        this.props.handlePostSubmit();
-        this.setState({
-          content: '',
-          restaurant: '',
-          dish: '',
-          photoURL: undefined,
-          likesdish: null,
-        });
-      },
-      error: (err) => {
-        console.log ('error hit', err);
-      },
-    });
-
 
   }
   handleClick(event) {
