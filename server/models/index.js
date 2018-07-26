@@ -138,7 +138,6 @@ module.exports = {
         image,
         recipe,
       } = data;
-      console.log('IMAGE: ', image);
       const content = data.content.replace("'", "''");
       const query = {
         text: 'insert into posts (content, likesDish, userId, dishId, restaurantId, image, recipe) values ($1, $2, $3, $4, $5, $6, $7)',

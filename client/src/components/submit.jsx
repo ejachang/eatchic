@@ -1,11 +1,21 @@
 /* global FormData */
 /* global window */
 /* eslint react/no-unused-state: "off" */
-
+import cloudinary from 'cloudinary-core';
 import React from 'react';
 import $ from 'jquery';
+import request from 'superagent';
 // import io from 'socket.io-client';
 import Suggestions from './suggestions';
+
+const cl = new cloudinary.Cloudinary({ cloud_name: 'demo', secure: true });
+
+// cloudinary.config({
+//   cloud_name: process.env.CLOUDINARY_NAME || 'name',
+//   api_key: process.env.CLOUDINARY_KEY || 'key',
+//   api_secret: process.env.CLOUDINARY_SECRET || 'secret',
+// });
+
 
 class Submit extends React.Component {
   constructor(props) {
@@ -88,9 +98,27 @@ class Submit extends React.Component {
   endSuggest() {
     this.setState({ active: null });
   }
-
+/*
+files File(738107) {name: "2018-04-02 trixie sketch2.jpg", lastModified: 1523229910274, lastModifiedDate: Sun Apr 08 2018 16:25:10 GMT-0700 (Pacific Daylight Time), webkitRelativePath: "", size: 738107, …}lastModified: 1523229910274lastModifiedDate: Sun Apr 08 2018 16:25:10 GMT-0700 (Pacific Daylight Time) {}name: "2018-04-02 trixie sketch2.jpg"size: 738107type: "image/jpeg"webkitRelativePath: ""__proto__: File
+submit.jsx?4656:106 event undefined
+*/
+  
   handleSubmit() {
+    const file = this.state.image;
 
+    const CLOUDINARY_URL = process.env.CLOUDINARY_URL || 'https://api.cloudinary.com/v1_1/deoppc4cw/image/upload';
+    const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_UPLOAD_PRESET || 'onegouap';
+    const upload = request.post(CLOUDINARY_URL)
+                          .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                          .field('file', file);
+
+    upload.end((err, response) => {
+      console.log(CLOUDINARY_URL);
+      console.log(response);
+      if (err) {
+        console.error(err);
+      }
+    });
     const postData = new FormData();
     if (this.state.likesdish === true) {
       postData.append('likesdish', 1);
@@ -113,7 +141,6 @@ class Submit extends React.Component {
 
     if (this.state.image) {
       postData.append('image', this.state.image);
-
     }
 
     $.post({
