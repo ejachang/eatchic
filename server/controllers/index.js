@@ -181,14 +181,13 @@ module.exports = {
     },
     submit: (req, res) => {
       const data = req.body;
+      console.log('request', req.body);
       const { dish, restaurant, likesdish } = req.body;
       if (likesdish === 'null') {
         data.likesdish = null;
       }
-      if (req.file) {
-        console.log('hit', data);
-        // console.log('hit2', req);
-        data.image = req.file.filename;
+      if (req.body.postData.imageURL.length > 0) {
+        data.image = req.body.postData.imageURL;
       } else {
         data.image = null;
       }

@@ -135,13 +135,13 @@ module.exports = {
         likesdish,
         userid, dishid,
         restaurantid,
-        image,
+        imageURL,
         recipe,
       } = data;
       const content = data.content.replace("'", "''");
       const query = {
-        text: 'insert into posts (content, likesDish, userId, dishId, restaurantId, image, recipe) values ($1, $2, $3, $4, $5, $6, $7)',
-        values: [content, likesdish, userid, dishid, restaurantid, image, recipe],
+        text: 'insert into posts (content, likesDish, userId, dishId, restaurantId, imageURL, recipe) values ($1, $2, $3, $4, $5, $6, $7)',
+        values: [content, likesdish, userid, dishid, restaurantid, imageURL, recipe],
       };
       return db.client.query(query);
     },
