@@ -11,7 +11,6 @@ eatchic
 >Still under construction
 
 ## Usage
-
 >Still under construction
 
 ## Requirements
@@ -19,7 +18,7 @@ eatchic
 - Postgresql 9.1.x
 
 ## Development
-
+>Still under construction
 
 ### Installing Dependencies
 
