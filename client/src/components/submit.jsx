@@ -11,13 +11,6 @@ import Suggestions from './suggestions';
 
 const cl = new cloudinary.Cloudinary({ cloud_name: 'demo', secure: true });
 
-// cloudinary.config({
-//   cloud_name: process.env.CLOUDINARY_NAME || 'name',
-//   api_key: process.env.CLOUDINARY_KEY || 'key',
-//   api_secret: process.env.CLOUDINARY_SECRET || 'secret',
-// });
-
-
 class Submit extends React.Component {
   constructor(props) {
     super(props);

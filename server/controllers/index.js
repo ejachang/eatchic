@@ -181,8 +181,7 @@ module.exports = {
     },
     submit: (req, res) => {
       const data = req.body;
-      console.log('request', req.body);
-      const { dish, restaurant, likesdish } = req.body;
+      const { dish, restaurant, likesdish } = req.body.postData;
       if (likesdish === 'null') {
         data.likesdish = null;
       }
@@ -204,9 +203,18 @@ module.exports = {
           }
           return data;
         })
-        .then(results => models.submit.post(results))
-        .then(results => res.json(results))
+        .then((results) => {
+          models.submit.post(results)
+          console.log('hit 208')
+          // console.log('controllers results 208: ', results)
+        })
+        .then((results) => {
+          res.json(results)
+          console.log('hit 213')
+          // console.log('controllers results 212: ', results)
+        })
         .catch((err) => {
+          // console.log(err);
           res.status(404).send(err);
         });
     },
