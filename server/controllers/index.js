@@ -68,6 +68,7 @@ module.exports = {
             res.body.data[i].downvoteUsers = postData.downvoteUsers;
             res.body.data[i].votes = postData.votes;
           });
+          console.log('controllers 71', res.body.data);
           res.json(res.body.data);
         })
         .catch((err) => {
@@ -205,12 +206,10 @@ module.exports = {
         })
         .then((results) => {
           models.submit.post(results)
-          console.log('hit 208')
           // console.log('controllers results 208: ', results)
         })
         .then((results) => {
           res.json(results)
-          console.log('hit 213')
           // console.log('controllers results 212: ', results)
         })
         .catch((err) => {

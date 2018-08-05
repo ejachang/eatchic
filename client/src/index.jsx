@@ -26,6 +26,7 @@ class App extends React.Component {
   }
 
   fetchData() {
+    console.log('got fetchData');
     $.get({
       url: '/session',
       success: (data) => {
@@ -37,6 +38,7 @@ class App extends React.Component {
           $.get({
             url: '/posts',
             success: (result) => {
+              console.log('fetchData 41', result);
               this.setState({
                 posts: result,
               });
@@ -63,6 +65,7 @@ class App extends React.Component {
   }
 
   handlePostSubmit() {
+    console.log('hit handlePostSubmit');
     this.fetchData();
   }
 

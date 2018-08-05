@@ -152,35 +152,17 @@ submit.jsx?4656:106 event undefined
           .catch(function (error) {
             console.log(error);
           });
-        // $.post({
-        //   url: '/submit',
-        //   data: postData,
-        //   processData: false,
-        //   contentType: 'application/json/',
-        //   dataType: 'json',
-        //   success: () => {
-        //     this.props.handlePostSubmit();
-        //     this.setState({
-        //       content: '',
-        //       restaurant: '',
-        //       dish: '',
-        //       photoURL: undefined,
-        //       likesdish: null,
-        //     });
-        //   },
-        //   error: (err) => {
-        //     console.log ('error hit', err);
-        //   },
-        // });
-        // console.log('hi');
-        // for (var pair of postData.entries()) {
-        //   console.log(pair[0]+ ', ' + pair[1]); 
-        // }
-
-        if (err) {
-          console.error(err);
-        }
+        
       }
+    });
+
+    this.props.handlePostSubmit();
+    this.setState({
+      content: '',
+      restaurant: '',
+      dish: '',
+      photoURL: undefined,
+      likesdish: null,
     });
 
   }
