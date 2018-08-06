@@ -52,7 +52,10 @@ module.exports = {
     getAll: (req, res) => {
       models.post.getAll()
         .then((results) => {
-          results = JSON.parse(JSON.stringify(results.rows));
+          console.log('controllers 55:', results.rows);
+          console.log('controllers 56:', results);
+          results = results.rows;
+          // results = JSON.parse(JSON.stringify(results.rows));
           res.body = {};
           res.body.data = results;
           const Promises = results.map((post) => {
