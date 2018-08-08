@@ -5,7 +5,6 @@ module.exports = {
   reviews: (req, res) => {
     const data = req.query;
     // eslint-disable-next-line
-    // console.log('date:', data);
     models.reviews(data)
       .then(results => res.json(results.rows))
       .catch(err => res.status(404).send(err));
@@ -52,8 +51,6 @@ module.exports = {
     getAll: (req, res) => {
       models.post.getAll()
         .then((results) => {
-          console.log('controllers 55:', results.rows);
-          // console.log('controllers 56:', results);
           results = results.rows;
           // results = JSON.parse(JSON.stringify(results.rows));
           res.body = {};
@@ -71,7 +68,6 @@ module.exports = {
             res.body.data[i].downvoteUsers = postData.downvoteUsers;
             res.body.data[i].votes = postData.votes;
           });
-          console.log('controllers 71', res.body.data);
           res.json(res.body.data);
         })
         .catch((err) => {
@@ -208,12 +204,10 @@ module.exports = {
           return data;
         })
         .then((results) => {
-          console.log('controllers results 211: ', results)
           models.submit.post(results)
         })
         .then((results) => {
           res.json(results)
-          console.log('controllers results 212: ', results)
         })
         .catch((err) => {
           // console.log(err);

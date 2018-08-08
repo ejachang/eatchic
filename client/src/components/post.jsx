@@ -39,7 +39,7 @@ const Post = (props) => {
  : null }
         </p>
         <p className="content-ele">{content}</p>
-        {image && <img className="image" alt="post" src={`/images/${image}`} />}
+        {image && <img className="image" alt="post" src={image} />}
       </article>
       <Comment
         upvoteUsers={upvoteUsers}

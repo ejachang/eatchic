@@ -26,7 +26,6 @@ class App extends React.Component {
   }
 
   fetchData() {
-    console.log('got fetchData');
     $.get({
       url: '/session',
       success: (data) => {
