@@ -209,7 +209,7 @@ module.exports = {
         })
         .then((results) => {
           console.log('controllers results 211: ', results)
-          models.submit.post(results.postData)
+          models.submit.post(results)
         })
         .then((results) => {
           res.json(results)

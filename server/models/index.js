@@ -132,13 +132,16 @@ module.exports = {
     },
     post: (data) => {
       const {
-        likesdish,
-        userid, dishid,
-        restaurantid,
+        restaurantid,        
+        dishid,
         image,
-        recipe,
-        content
       } = data;
+      const {
+        userid,
+        recipe,
+        content,
+        likesdish, 
+      } = data.postData;
       // console.log('models 141', image);
       console.log('models 142', content, likesdish, userid, dishid, restaurantid, image, recipe);
       // let content;
