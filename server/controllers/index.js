@@ -53,7 +53,7 @@ module.exports = {
       models.post.getAll()
         .then((results) => {
           console.log('controllers 55:', results.rows);
-          console.log('controllers 56:', results);
+          // console.log('controllers 56:', results);
           results = results.rows;
           // results = JSON.parse(JSON.stringify(results.rows));
           res.body = {};
@@ -208,12 +208,12 @@ module.exports = {
           return data;
         })
         .then((results) => {
-          models.submit.post(results)
-          // console.log('controllers results 208: ', results)
+          console.log('controllers results 211: ', results)
+          models.submit.post(results.postData)
         })
         .then((results) => {
           res.json(results)
-          // console.log('controllers results 212: ', results)
+          console.log('controllers results 212: ', results)
         })
         .catch((err) => {
           // console.log(err);

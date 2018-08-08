@@ -92,10 +92,6 @@ class Submit extends React.Component {
   endSuggest() {
     this.setState({ active: null });
   }
-/*
-files File(738107) {name: "2018-04-02 trixie sketch2.jpg", lastModified: 1523229910274, lastModifiedDate: Sun Apr 08 2018 16:25:10 GMT-0700 (Pacific Daylight Time), webkitRelativePath: "", size: 738107, …}lastModified: 1523229910274lastModifiedDate: Sun Apr 08 2018 16:25:10 GMT-0700 (Pacific Daylight Time) {}name: "2018-04-02 trixie sketch2.jpg"size: 738107type: "image/jpeg"webkitRelativePath: ""__proto__: File
-submit.jsx?4656:106 event undefined
-*/
   
   handleSubmit() {
     let postData = {};

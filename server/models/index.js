@@ -137,15 +137,16 @@ module.exports = {
         restaurantid,
         image,
         recipe,
+        content
       } = data;
-      console.log('models 141', image);
-      console.log('models 142', data);
-      let content;
-      if (data.content) {
-        content = data.content.replace("'", "''");
-      }
+      // console.log('models 141', image);
+      console.log('models 142', content, likesdish, userid, dishid, restaurantid, image, recipe);
+      // let content;
+      // if (data.content) {
+      //   content = data.content.replace("'", "''");
+      // }
       const query = {
-        text: 'insert into posts (content, likesDish, userId, dishId, restaurantId, image, recipe) values ($1, $2, $3, $4, $5, $6, $7)',
+        text: 'insert into posts (content, likesdish, userid, dishid, restaurantid, image, recipe) values ($1, $2, $3, $4, $5, $6, $7)',
         values: [content, likesdish, userid, dishid, restaurantid, image, recipe],
       };
       return db.client.query(query);
