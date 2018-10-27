@@ -204,10 +204,10 @@ module.exports = {
           return data;
         })
         .then((results) => {
-          models.submit.post(results)
+          models.submit.post(results);
         })
         .then((results) => {
-          res.json(results)
+          res.json(results);
         })
         .catch((err) => {
           // console.log(err);

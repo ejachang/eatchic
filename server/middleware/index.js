@@ -1,5 +1,6 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const LocalStrategy = require('passport-local').Strategy;
+const passport = require('passport');
 const models = require('../models');
 // const keys = require('../config');
 // const CryptoJS = require('crypto-js');
@@ -51,5 +52,14 @@ module.exports = {
     } else {
       res.redirect('/login');
     }
+  },
+  loginCallback: () => {
+    passport.authenticate('google', {
+      successRedirect: '/home',
+      failureRedirect: '/fail',
+    });
+  },
+  errorPage: (req, res) => {
+    res.send('Log in error');
   },
 };

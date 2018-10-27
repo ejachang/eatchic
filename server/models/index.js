@@ -132,7 +132,7 @@ module.exports = {
     },
     post: (data) => {
       const {
-        restaurantid,        
+        restaurantid,
         dishid,
         image,
       } = data;
@@ -140,7 +140,7 @@ module.exports = {
         userid,
         recipe,
         content,
-        likesdish, 
+        likesdish,
       } = data.postData;
       // console.log('models 141', image);
       console.log('models 142', content, likesdish, userid, dishid, restaurantid, image, recipe);

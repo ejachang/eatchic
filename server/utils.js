@@ -26,7 +26,7 @@ module.exports = {
     return output;
   },
   sortByRating: (posts) => {
-    console.log ('before sort:', posts);
+    console.log('before sort:', posts);
     posts.sort((a, b) => {
       if (a.votes.upvote < b.votes.upvote) {
         return 1;
