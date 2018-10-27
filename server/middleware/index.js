@@ -54,6 +54,8 @@ module.exports = {
     }
   },
   loginCallback: passport.authenticate('google', (req, res) => {
+    console.log('callback was hit!')
+    console.log(req);
     res.send('success!');
   }),
   errorPage: (req, res) => {
