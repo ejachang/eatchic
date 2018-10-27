@@ -1,6 +1,6 @@
 const controller = require('./controllers');
 const router = require('express').Router();
-const { isLoggedIn } = require('./middleware');
+const { isLoggedIn, loginCallback, errorPage } = require('./middleware');
 
 router.get('/search/:searchTerm/:searchValue', isLoggedIn, (req, res) => {
   const { searchTerm, searchValue } = req.params;
@@ -23,5 +23,6 @@ router.post('/submit', controller.post.submit);
 router.post('/votes/upvote', isLoggedIn, controller.dishlikes.upVote);
 router.post('/votes/downvote', isLoggedIn, controller.dishlikes.downVote);
 router.get('/user/profile', isLoggedIn, controller.user.getProfile);
-
+router.get('/auth/google/callback', loginCallback);
+router.get('/fail', errorPage);
 module.exports = router;
