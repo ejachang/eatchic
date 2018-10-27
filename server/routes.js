@@ -23,6 +23,6 @@ router.post('/submit', controller.post.submit);
 router.post('/votes/upvote', isLoggedIn, controller.dishlikes.upVote);
 router.post('/votes/downvote', isLoggedIn, controller.dishlikes.downVote);
 router.get('/user/profile', isLoggedIn, controller.user.getProfile);
-router.get('/auth/google/callback', loginCallback);
+router.get('/auth/google/redirect', loginCallback);
 router.get('/fail', errorPage);
 module.exports = router;
