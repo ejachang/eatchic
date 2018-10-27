@@ -53,12 +53,9 @@ module.exports = {
       res.redirect('/login');
     }
   },
-  loginCallback: () => {
-    passport.authenticate('google', {
-      successRedirect: '/home',
-      failureRedirect: '/fail',
-    });
-  },
+  loginCallback: passport.authenticate('google', (req, res) => {
+    res.send('success!');
+  }),
   errorPage: (req, res) => {
     res.send('Log in error');
   },
